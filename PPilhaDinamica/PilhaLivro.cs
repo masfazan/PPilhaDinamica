@@ -28,14 +28,14 @@
         {
             if (vazia() == false)
             {
-             
-            Console.WriteLine("Pilha vazia!");
-            Console.WriteLine("Impossível remover");
-            Console.ReadKey();
+
+                Console.WriteLine("Pilha vazia!");
+                Console.WriteLine("Impossível remover");
+                Console.ReadKey();
             }
             else
             {
-                topo=topo.getAnterior();
+                topo = topo.getAnterior();
             }
         } //remover livro
 
@@ -69,5 +69,49 @@
                 Console.ReadKey();
             }
         } //imprimir
+        public int quantidade()
+        {
+            Livro aux = topo;
+            int cont = 0;
+            if (vazia())
+            {
+                return 0;
+            }
+            else
+            {
+                do
+                {
+                    cont++;
+                    aux = aux.getAnterior();
+                } while (aux != null);
+            }
+            return cont;
+        }
+
+        public void PrintListaVazia()
+        {
+            Console.WriteLine("\nPilha vazia!");
+            Console.WriteLine("Pressione qualquer tecla para continuar...\n\n");
+            Console.ReadKey();
+        }
+            public void BuscarLivro(string titulo)
+        {
+            if (vazia())
+                PrintListaVazia();
+            else
+            {
+                Livro aux = topo;
+                while (titulo != aux.getTitulo() && aux.getAnterior() != null)
+                {
+                    aux = aux.getAnterior();
+                }
+                if (aux.getTitulo() == titulo)
+                    Console.WriteLine("Livro encontrado na pilha");
+                else
+                    Console.WriteLine("Livro não encontrado na pilha");
+
+                Console.ReadKey();
+            }
+        }
     }
 }

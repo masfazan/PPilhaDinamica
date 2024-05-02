@@ -14,8 +14,9 @@ internal class Program
             Console.WriteLine("1-Inserir livro");
             Console.WriteLine("2-Remover livro");
             Console.WriteLine("3-Imprimir pilha");
+            Console.WriteLine("4-Busca´por título");
             Console.WriteLine("0-Sair");
-            Console.WriteLine("Informar a opção desejada:< >\b\b");
+            Console.Write("Informar a opção desejada:< >\b\b");
             opc = int.Parse(Console.ReadLine());
             switch (opc)
             {
@@ -27,6 +28,10 @@ internal class Program
                     break;
                 case 3:
                     minhaPilha.print();
+                    break;
+                case 4:
+                    Console.WriteLine("Digite o nome do livro:");
+                    minhaPilha.BuscarLivro(Console.ReadLine());
                     break;
                 case 0:
                     Console.WriteLine("Fim do programa");

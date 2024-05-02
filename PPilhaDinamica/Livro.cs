@@ -11,6 +11,11 @@
             this.anterior = null; //primeira vez, anterior ainda não tem 'valor'
         }
 
+        public string getTitulo()
+        {
+            return this.titulo;
+        }
+
         public override string? ToString()
         {
             return "Título do livro\n" + titulo;
